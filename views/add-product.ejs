@@ -1,0 +1,20 @@
+<%- include('includes/main.ejs')  %>
+<link rel="stylesheet" href="/css/add-product.css"> 
+</head>
+<body>
+    <%- include('includes/navigation.ejs') %>
+    
+    
+    <form class="add-product" action="/product" method="post" enctype="multipart/form-data">
+        <input type="text" name="title" placeholder="Book title">
+        <input type="number" name="price" placeholder="Book price">
+        <input type="file" name="image" placeholder="choose the file">
+        <textarea name="discription"  cols="30" rows="5" placeholder="Write about Book"></textarea>
+
+        <button type="submit">Add porduct</button>
+
+
+    </form>
+
+
+<%- include('includes/end.ejs') %>

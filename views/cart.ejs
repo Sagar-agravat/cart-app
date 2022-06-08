@@ -1,0 +1,48 @@
+<%- include('includes/main.ejs') %>
+<link rel="stylesheet" href="/css/shop.css">
+
+</head>
+<body>
+    <%- include('includes/navigation.ejs') %>
+    <div class="main-page">
+
+    
+        <% if (obj.length === 0){ %>
+            <h1> No items to show</h1>
+        <% }else { %>
+            <% for (let product of obj) { %>
+        
+                <div class="mainpage-container">
+                    <div class="title"><p><%= product.productId.title %></p></div>
+                    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/ebcdfd44216545.56076cdf0ed14.jpg" alt="image not found">
+                    <div class="bottom">
+                        <ul>
+                            <li class="price">$<%= product.productId.price %></li>
+                            <li class="discription"><%= product.productId.discription %></li>
+                            
+                        </ul>
+                    </div>
+                    <div class="buy">
+                        <P>qty: <%= product.qty %></P>
+                        </form>
+                        <form action="/cart/<%= product.productId.id %>" method="post">
+                            <!-- <% console.log(typeof(product.productId.id)) %> -->
+                            <button type="submit" >delete</button>
+                        </form>
+                    </div>
+
+
+                    
+                    
+                    
+                </div>
+                <% } %>
+                <h3>Total amount : <%= total %></h3>
+                <form action="/order1" method="post">
+                    <button type="submit" >Checkout</button>
+                </form>
+            <% } %>
+        </div>
+
+
+<%- include('includes/end.ejs') %>

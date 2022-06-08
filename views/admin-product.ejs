@@ -1,0 +1,40 @@
+<%- include('includes/main.ejs') %>
+<link rel="stylesheet" href="/css/shop.css">
+</head>
+<body>
+    <%- include('includes/navigation.ejs') %>
+    <div class="main-page">
+    
+        <% if (obj.length == 0){ %>
+            <h1> No items to show</h1>
+        <% }else { %>
+            <% for (let product of obj) { %>
+        
+                <div class="mainpage-container">
+                    <div class="title"><p><%= product.title %></p></div>
+                    <img src= "<%= product.imageUrl %>" alt="image not found">
+                    <div class="bottom">
+                        <ul>
+                            <li class="price">$<%= product.price %></li>
+                            <li class="discription"><%= product.discription %></li>
+                            
+                        </ul>
+                    </div>
+                    <div class="buy">
+                        <form action="/edit/<%= product.id %>" method="get">
+                            <button type="submit" >Edit</button>
+                        </form>
+                        
+                        <form action="/delete/<%= product.id %>" method="post">
+                            <button type="submit" >Delete</button>
+                        </form>
+                    </div>
+                    
+                    
+                    
+                </div>
+                <% } %>
+            <% } %>
+        </div>
+
+<%- include('includes/end.ejs') %>

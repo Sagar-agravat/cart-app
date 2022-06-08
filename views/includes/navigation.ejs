@@ -1,0 +1,38 @@
+<nav class="navigation">
+    <div class="container">
+
+        <ul class="nav">
+            <li class="nav-item"><a class="<%= cls === '/' ? 'active' : '' %>" href="/">shop</a></li>
+            <li class="nav-item"><a class="<%= cls === '/product' ? 'active' : '' %>" href="/product">Products</a></li>
+            <% if (isAuthenticated === true) { %>
+                
+            <li class="nav-item"><a class="<%= cls === '/add-product' ? 'active' : '' %>" href="/add-product">Add-products</a></li>
+            <li class="nav-item"><a class="<%= cls === '/admin-product' ? 'active' : '' %>" href="/admin-product">Admin-products</a></li>
+            <li class="nav-item"><a class="<%= cls === '/order' ? 'active' : '' %>" href="/order">Order</a></li>
+            <li class="nav-item"><a class="<%= cls === '/cart' ? 'active' : '' %>" href="/cart">Cart</a></li>
+           
+           <% } %>
+           
+            
+        </ul>
+        <div class="log">
+            <% if (!isAuthenticated) { %>
+                <form action="/login" method="get">
+                    <button class="btn nav-item <%= cls === '/login' ? 'active' : '' %>" type="submit">Login</button>
+                </form>
+                <% } %>
+            <% if (isAuthenticated === true) { %>
+                <form action="/logout" method="get">
+                    <button class="btn nav-item <%= cls === '/logout' ? 'active' : '' %>" type="submit">Logout</button>
+                </form>
+            <% } %>
+            <% if (isAuthenticated == undefined) { %>
+                <form action="/singup" method="get">
+                    <button class="btn nav-item <%= cls === '/singup' ? 'active' : '' %>" type="submit">Singup</button>
+                </form>
+            <% } %>
+        </div>
+        
+    </div>
+
+</nav>

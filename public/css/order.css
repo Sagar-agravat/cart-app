@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main-page {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+
+}
+.mainpage-container {
+    height: 50%;
+}
+.main {
+    width: 100%;
+    /* height: 100%; */
+    border: 2px solid gray;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+.buy {
+    display: block;
+    text-align: center;
+}
+.buy p{
+    font-size: 10px;
+}
+.mainpage-container .title {
+    display: block;
+    border-bottom: 0px solid rgb(185, 182, 182);
+    width: 0;
+    height: 20px;
+    text-align: center;
+    background-color: white;
+    color: #0d0c0c;
+    border-radius: 0px 0px 0px 0px;
+}
+
+.bottom ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    align-items: center;
+}

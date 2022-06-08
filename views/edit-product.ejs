@@ -1,0 +1,21 @@
+<%- include('includes/main.ejs')  %>
+<link rel="stylesheet" href="/css/add-product.css"> 
+</head>
+<body>
+    
+    
+    
+    <form class="add-product" action="/editedProduct/<%= obj.id %>" method="post" >
+       
+        <input type="text" name="title" placeholder="Book Title" value="<%= obj.title %>">
+        <input type="number" name="price" placeholder="Book price" value="<%= obj.price %>">
+        <input type="numbet" name="imageUrl" placeholder="Enter imageUrl" value="<%= obj.imageUrl %>">
+        <textarea name="discription"  cols="30" rows="5" placeholder="Write about Book" ><%= obj.discription %></textarea>
+
+        <button type="submit">Edit porduct</button>
+
+
+    </form>
+
+
+<%- include('includes/end.ejs') %>

@@ -1,0 +1,27 @@
+<%- include('includes/main.ejs')  %>
+<link rel="stylesheet" href="/css/add-product.css"> 
+</head>
+<body>
+    <%- include('includes/navigation.ejs') %>
+    <% console.log('ttttttttttttttt',message) %>
+    <% if(message !== null) { %>
+    <div class="user-message user-message--error">
+        <%= message %>
+    </div>
+    <% } %>
+    <form class="add-product" action="/login" method="post" novalidate>
+        <input class="<%= invalid === 'email' ? 'notvalide' : '' %>" type="email" name="email" placeholder="Enter your E-mail address" value="<% iserror === 'true' ? email : '' %>">
+        <input class="<%= invalid === 'password' ? 'notvalide' : '' %>" type="password" name="password" placeholder="Enter your password" value="<% iserror === 'true' ? password : '' %>">
+        
+        
+        <form action="/login" method="post">
+            <button type="submit">Login</button>
+            <a href="http://localhost:3000/reset-password">Reset password</a>
+        </form>
+
+
+
+    </form>
+
+
+<%- include('includes/end.ejs') %>

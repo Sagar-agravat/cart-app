@@ -1,0 +1,9 @@
+.user-message{
+    height: 20px;
+    width: 80px;
+    border: 1px solid red;
+    background: rgb(228, 144, 144);
+    color: white;
+    display: block;
+    text-align: center;
+}
